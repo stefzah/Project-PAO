@@ -17,3 +17,4 @@ Proiectul este compus din 11 clase:
                      - din aceasta clasa deriva clasele **Hunter**, **Warrior**, **Wizard** si **Goblin**
                      - obiectele acestei clase sunt comparabile in functie de hp
                      
+- **clasa Effect** - clasa neimplementata, va descrie buffuri si debuffuri
