@@ -3,18 +3,19 @@ package com.company;
 import com.company.Creatures.Creature;
 import javafx.util.Pair;
 
-import java.util.Random;
+import java.util.*;
 
 abstract public class Group {
     protected int nr_member;
-    protected Creature[] members;
+    protected SortedSet<Creature> members = new TreeSet<>();
     protected int[] poz = new int[2];
     boolean turn = true;
 
     public void showInfo() {
         System.out.println("This group has " + this.nr_member + " members:");
-        for (int i = 0; i < nr_member; i++)
-            members[i].showInfo();
+        for(Creature C : members){
+            C.showInfo();
+        }
     }
 
     public void setPoz(int x, int y) {

@@ -4,7 +4,7 @@ package com.company.Creatures;
 import java.util.*;
 import com.company.Effects.*;
 
-public abstract class Creature {
+public abstract class Creature implements Comparable<Creature>{
     private String name;
     private int max_hp;
     private int hp;
@@ -140,8 +140,13 @@ public abstract class Creature {
         return hp > 0;
     }
 
-
     public void showInfo(){
         System.out.println("Name: "+name+", Class: "+this.getClass().getSimpleName()+", HP:"+hp+", DMG:"+dmg+ ", Spellslots:"+spellslots+", STR:"+str+", VGR:"+vgr+", DEX:"+dex);
     }
+
+    @Override
+    public int compareTo(Creature C){
+       return Integer.compare(this.hp, C.hp);
+    }
+
 }

@@ -50,13 +50,13 @@ public class Map {
     public void move() {
         Game.incrementTime();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Choose a direction:");
-        System.out.println("8 - North");
-        System.out.println("6 - East");
-        System.out.println("2 - South");
-        System.out.println("4 - West");
+        System.out.println("Choose an action:");
+        System.out.println("8 - Go North");
+        System.out.println("6 - Go East");
+        System.out.println("2 - Go South");
+        System.out.println("4 - Go West");
         System.out.println("0 - Rest");
-        System.out.println("7 - Info");
+        System.out.println("7 - Show Info");
         System.out.println("Type a valid input then press enter: ");
         int command = scanner.nextInt();
         int[] poz = campaign.getPoz();
