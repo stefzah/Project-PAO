@@ -35,4 +35,5 @@ La pornirea jocului, jucatorul are optiunea de a incepe un joc nou, sau de a con
 Toate datele din fisierele CSV sunt extrase si prelucrate cu ajutorul clasei **DataExtractor**
 
 Pentru serviciul de audit am adaugat clasa Log, care este singleton.
+
 ![img](https://raw.githubusercontent.com/stefzah/Project-PAO/master/d32fce1ec29ea46ac90d2d49e339c46f.png)
