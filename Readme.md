@@ -1,7 +1,5 @@
 # Project - Joc RPG
 
-*Partea I*
-
 **Tema proiectului** - un joc turn-based in care controlezi o echipa in cautarea unei comori. Mecanica bataliilor nu este inca implementata,
 deci intr-o confruntare singurele optiuni valabile jucatorului sunt de a se preda(ceea ce duce la pierderea jocului) sau de a se lupta(optiune care elimina echipa adversa si permite jocului sa continue)
 ## Prima parte a proiectului - definire entitati, mosteniri
@@ -23,4 +21,18 @@ Proiectul este compus din 11 clase:
 - **clasa Effect** - clasa neimplementata, va descrie buffuri si debuffuri
 
 
-*Partea II*
+## A doua parte a proiectului - fisiere CSV, serviciu de audit
+
+Am introdus la acest proiect 3 fisiere CSV:
+- **Classes.csv** - initializeaza valorile default ale atributelor fiecarei clase(**Warrior**, **Ranger**, **Wizard**, **Goblin**)
+- **Campaign.csv** - initializeaza companionii default(numele si clasa) la inceperea jocului(implica **Campaign**)
+- **Map.csv** - initializeaza harta jocului (implica **Map**)
+
+De asemenea jucatorul are optiunea de a salva jocul, moemnt in care harta curenta se salveasa in fisierul **Map.csv**
+La pornirea jocului, jucatorul are optiunea de a incepe un joc nou, sau de a continua progresul de la ultima salvare.
+![img](https://raw.githubusercontent.com/stefzah/Project-PAO/master/b6cedbcae28ec078f362383d358512d6.png)
+
+Toate datele din fisierele CSV sunt extrase si prelucrate cu ajutorul clasei **DataExtractor**
+
+Pentru serviciul de audit am adaugat clasa Log, care este singleton.
+![img](https://raw.githubusercontent.com/stefzah/Project-PAO/master/d32fce1ec29ea46ac90d2d49e339c46f.png)
