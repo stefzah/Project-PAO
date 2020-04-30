@@ -1,30 +1,34 @@
 package com.company.Creatures;
 
+import com.company.Events.DataExtractor;
+
 public class Ranger extends Creature {
-    public Ranger() {
+    public Ranger(String name) {
 
-        super("Elion");
+        super(name);
 
-        this.setMax_hp(10);
-        this.setHp(10);
+        DataExtractor csvScanner = DataExtractor.getInstance();
 
-        this.setMax_armor(15);
-        this.setArmor(15);
+        this.setMax_hp(csvScanner.getClassInfo(getClass().getSimpleName(), "Max_hp"));
+        this.setHp(this.getMax_hp());
 
-        this.setMax_dmg(10);
-        this.setDmg(10);
+        this.setMax_armor(csvScanner.getClassInfo(getClass().getSimpleName(), "Max_armor"));
+        this.setArmor(this.getMax_armor());
 
-        this.setSpellslots(3);
-        this.setStr(9);
-        this.setVgr(10);
-        this.setDex(14);
+        this.setMax_dmg(csvScanner.getClassInfo(getClass().getSimpleName(), "Max_dmg"));
+        this.setDmg(this.getMax_dmg());
+
+        this.setSpellslots(csvScanner.getClassInfo(getClass().getSimpleName(), "Spellslots"));
+        this.setStr(csvScanner.getClassInfo(getClass().getSimpleName(), "STR"));
+        this.setVgr(csvScanner.getClassInfo(getClass().getSimpleName(), "VGR"));
+        this.setDex(csvScanner.getClassInfo(getClass().getSimpleName(), "DEX"));
     }
 
     public void levelUp() {
         this.setMax_hp(this.getMax_hp() + 1);
         this.setHp(this.getMax_hp());
 
-        this.setMax_armor(this.getMax_armor()+1);
+        this.setMax_armor(this.getMax_armor() + 1);
         this.setArmor(this.getMax_armor());
 
         this.setDex(this.getDex() + 1);

@@ -1,23 +1,27 @@
 package com.company.Creatures;
 
+import com.company.Events.DataExtractor;
+
 public class Warrior extends Creature {
-    public Warrior() {
+    public Warrior(String name) {
 
-        super("Warrenus");
+        super(name);
 
-        this.setMax_hp(15);
-        this.setHp(15);
+        DataExtractor csvScanner = DataExtractor.getInstance();
 
-        this.setMax_armor(12);
-        this.setArmor(12);
+        this.setMax_hp(csvScanner.getClassInfo(getClass().getSimpleName(), "Max_hp"));
+        this.setHp(this.getMax_hp());
 
-        this.setMax_dmg(12);
-        this.setDmg(12);
+        this.setMax_armor(csvScanner.getClassInfo(getClass().getSimpleName(), "Max_armor"));
+        this.setArmor(this.getMax_armor());
 
-        this.setSpellslots(2);
-        this.setStr(12);
-        this.setVgr(12);
-        this.setDex(10);
+        this.setMax_dmg(csvScanner.getClassInfo(getClass().getSimpleName(), "Max_dmg"));
+        this.setDmg(this.getMax_dmg());
+
+        this.setSpellslots(csvScanner.getClassInfo(getClass().getSimpleName(), "Spellslots"));
+        this.setStr(csvScanner.getClassInfo(getClass().getSimpleName(), "STR"));
+        this.setVgr(csvScanner.getClassInfo(getClass().getSimpleName(), "VGR"));
+        this.setDex(csvScanner.getClassInfo(getClass().getSimpleName(), "DEX"));
     }
 
     public void levelUp() {

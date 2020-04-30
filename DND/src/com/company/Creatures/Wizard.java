@@ -1,23 +1,27 @@
 package com.company.Creatures;
 
+import com.company.Events.DataExtractor;
+
 public class Wizard extends Creature {
-    public Wizard() {
+    public Wizard(String name) {
 
-        super("Azimuth");
+        super(name);
 
-        this.setMax_hp(12);
-        this.setHp(12);
+        DataExtractor csvScanner = DataExtractor.getInstance();
 
-        this.setMax_armor(12);
-        this.setArmor(12);
+        this.setMax_hp(csvScanner.getClassInfo(getClass().getSimpleName(), "Max_hp"));
+        this.setHp(this.getMax_hp());
 
-        this.setMax_dmg(8);
-        this.setDmg(8);
+        this.setMax_armor(csvScanner.getClassInfo(getClass().getSimpleName(), "Max_armor"));
+        this.setArmor(this.getMax_armor());
 
-        this.setSpellslots(5);
-        this.setStr(11);
-        this.setVgr(11);
-        this.setDex(11);
+        this.setMax_dmg(csvScanner.getClassInfo(getClass().getSimpleName(), "Max_dmg"));
+        this.setDmg(this.getMax_dmg());
+
+        this.setSpellslots(csvScanner.getClassInfo(getClass().getSimpleName(), "Spellslots"));
+        this.setStr(csvScanner.getClassInfo(getClass().getSimpleName(), "STR"));
+        this.setVgr(csvScanner.getClassInfo(getClass().getSimpleName(), "VGR"));
+        this.setDex(csvScanner.getClassInfo(getClass().getSimpleName(), "DEX"));
     }
 
     public void levelUp() {

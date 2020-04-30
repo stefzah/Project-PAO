@@ -1,23 +1,27 @@
 package com.company.Creatures;
 
+import com.company.Events.DataExtractor;
+
 public class Goblin extends Creature{
     public Goblin() {
 
         super("Goblin");
 
-        this.setMax_hp(8);
-        this.setHp(8);
+        DataExtractor csvScanner = DataExtractor.getInstance();
 
-        this.setMax_armor(10);
-        this.setArmor(10);
+        this.setMax_hp(csvScanner.getClassInfo(getClass().getSimpleName(), "Max_hp"));
+        this.setHp(this.getMax_hp());
 
-        this.setMax_dmg(6);
-        this.setDmg(6);
+        this.setMax_armor(csvScanner.getClassInfo(getClass().getSimpleName(), "Max_armor"));
+        this.setArmor(this.getMax_armor());
 
-        this.setSpellslots(0);
-        this.setStr(8);
-        this.setVgr(8);
-        this.setDex(6);
+        this.setMax_dmg(csvScanner.getClassInfo(getClass().getSimpleName(), "Max_dmg"));
+        this.setDmg(this.getMax_dmg());
+
+        this.setSpellslots(csvScanner.getClassInfo(getClass().getSimpleName(), "Spellslots"));
+        this.setStr(csvScanner.getClassInfo(getClass().getSimpleName(), "STR"));
+        this.setVgr(csvScanner.getClassInfo(getClass().getSimpleName(), "VGR"));
+        this.setDex(csvScanner.getClassInfo(getClass().getSimpleName(), "DEX"));
     }
 
     public void levelUp() {
