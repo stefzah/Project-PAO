@@ -28,7 +28,7 @@ Am introdus la acest proiect 3 fisiere CSV:
 - **Campaign.csv** - initializeaza companionii default(numele si clasa) la inceperea jocului(implica **Campaign**)
 - **Map.csv** - initializeaza harta jocului (implica **Map**)
 
-De asemenea jucatorul are optiunea de a salva jocul, moemnt in care harta curenta se salveasa in fisierul **Map.csv**
+De asemenea jucatorul are optiunea de a salva jocul, moemnt in care harta curenta se salveasa in fisierul **Map.csv**.
 La pornirea jocului, jucatorul are optiunea de a incepe un joc nou, sau de a continua progresul de la ultima salvare.
 ![img](https://raw.githubusercontent.com/stefzah/Project-PAO/master/b6cedbcae28ec078f362383d358512d6.png)
 
