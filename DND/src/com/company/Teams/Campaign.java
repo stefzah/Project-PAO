@@ -12,7 +12,25 @@ public class Campaign extends Group {
         nr_member = csvScanner.getCompanionCount();
         for (int i = 0; i < nr_member; i++) {
             String companion_name = csvScanner.getCompanionInfo(i, "Name");
-            String companion_race = csvScanner.getCompanionInfo(i, "Race");
+            String companion_race = csvScanner.getCompanionInfo(i, "Class");
+            if (companion_race.equals("Ranger")) members.add(new Ranger(companion_name));
+            if (companion_race.equals("Warrior")) members.add(new Warrior(companion_name));
+            if (companion_race.equals("Wizard")) members.add(new Wizard(companion_name));
+        }
+        this.setPoz(x, y);
+        Map.setCampaign(this);
+    }
+
+    public Campaign(int x,int y, int nr) {
+        DataExtractor csvScanner = DataExtractor.getInstance();
+        nr_member=nr;
+        csvScanner.deleteAllCompanions();
+        csvScanner.addCompanion("Warrenus","Warrior");
+        csvScanner.addCompanion("Elion","Ranger");
+        csvScanner.addCompanion("Azimuth","Wizard");
+        for (int i = 0; i < nr_member; i++) {
+            String companion_name = csvScanner.getCompanionInfo(i, "Name");
+            String companion_race = csvScanner.getCompanionInfo(i, "Class");
             if (companion_race.equals("Ranger")) members.add(new Ranger(companion_name));
             if (companion_race.equals("Warrior")) members.add(new Warrior(companion_name));
             if (companion_race.equals("Wizard")) members.add(new Wizard(companion_name));

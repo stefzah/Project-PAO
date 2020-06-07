@@ -8,17 +8,19 @@ import java.io.IOException;
 import java.util.*;
 
 abstract public class Group {
-    protected int nr_member;
-    protected SortedSet<Creature> members = new TreeSet<>();
+    public int nr_member;
+    public ArrayList<Creature> members = new ArrayList<>();
     protected int[] poz = new int[2];
     boolean turn = true;
 
-    public void showInfo() {
-        System.out.println("This group has " + this.nr_member + " members:");
+    public String showInfo() {
+        StringBuilder str = new StringBuilder();
+        str.append("This group has ").append(this.nr_member).append(" members: \n");
         for(Creature C : members){
-            C.showInfo();
+            str.append(C.showInfo()).append("\n");
         }
         Logger.log("Group::showInfo");
+        return str.toString();
     }
 
     public void setPoz(int x, int y) {

@@ -3,9 +3,9 @@ package com.company.Creatures;
 import com.company.Events.DataExtractor;
 
 public class Goblin extends Creature{
-    public Goblin() {
+    public Goblin(String name) {
 
-        super("Goblin");
+        super(name);
 
         DataExtractor csvScanner = DataExtractor.getInstance();
 

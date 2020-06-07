@@ -140,8 +140,8 @@ public abstract class Creature implements Comparable<Creature>{
         return hp > 0;
     }
 
-    public void showInfo(){
-        System.out.println("Name: "+name+", Class: "+this.getClass().getSimpleName()+", HP:"+hp+", DMG:"+dmg+ ", Spellslots:"+spellslots+", STR:"+str+", VGR:"+vgr+", DEX:"+dex);
+    public String showInfo(){
+        return "Name: "+name+", Class: "+this.getClass().getSimpleName()+", HP:"+hp+", DMG:"+dmg+ ", Spellslots:"+spellslots+", STR:"+str+", VGR:"+vgr+", DEX:"+dex;
     }
 
     @Override

@@ -1,13 +1,12 @@
 package com.company.Teams;
 
-import com.company.Creatures.*;
-import com.company.Teams.Group;
+import com.company.Creatures.Goblin;
 
 public class Mob extends Group {
     public Mob() {
         nr_member = 3;
-        members.add(new Goblin());
-        members.add(new Goblin());
-        members.add(new Goblin());
+        for(int i=0;i<nr_member;i++) {
+            members.add(new Goblin("Goblin"+i));
+        }
     }
 }

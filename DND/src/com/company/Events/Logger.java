@@ -24,7 +24,7 @@ public class Logger {
 
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
             LocalDateTime now = LocalDateTime.now();
-            writer.write(method + ", " + dtf.format(now) + '\n');
+            writer.write(method + ", " + dtf.format(now) +" Thread: "+Thread.currentThread().getName()+'\n');
             writer.close();
         } catch (IOException e) {
             e.printStackTrace();

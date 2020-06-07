@@ -1,52 +1,70 @@
 package com.company.Events;
 
+import com.company.BattleGUI;
+import com.company.MapGUI;
 import com.company.Teams.Group;
 
+import javax.swing.*;
+import java.lang.reflect.InvocationTargetException;
 import java.util.Scanner;
 
 public class Battle {
-    private Group Allies;
-    private Group Enemies;
-    private boolean win;
+    static public Group Allies;
+    static public Group Enemies;
+    static public boolean win;
 
     public Battle(Group Allies, Group Enemies) {
-        this.Allies = Allies;
-        this.Enemies = Enemies;
-        System.out.println("You have encountered an angry mob!");
-        showOptions();
+        win = true;
+        final BattleGUI[] app = new BattleGUI[1];
+        Battle.Allies = Allies;
+        Battle.Enemies = Enemies;
+
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                app[0] = new BattleGUI();
+                app[0].setVisible(true);
+            }
+        });
+
+
+
     }
 
-    public void showOptions() {
-        System.out.println("Choose your next move:");
-        System.out.println("0 - Battle Info");
-        System.out.println("1 - Surrender");
-        System.out.println("2 - Fight");
-        Scanner scanner = new Scanner(System.in);
-        int option = scanner.nextInt();
-        if (option == 0) showInfo();
-        if (option == 1) surrender();
-        if (option == 2) fight();
-        Logger.log("Battle:showOptions");
-    }
-
-    public void showInfo() {
-        System.out.println("Your team:");
-        Allies.showInfo();
-        System.out.println("The enemy:");
-        Enemies.showInfo();
-        showOptions();
+    static public String[] showInfo() {
+        StringBuilder str1 = new StringBuilder();
+        StringBuilder str2 = new StringBuilder();
+        String[] str = new String[2];
+        str1.append("Your team:\n");
+        str1.append(Allies.showInfo());
+        str2.append("The enemy:\n");
+        str2.append(Enemies.showInfo());
         Logger.log("Battle::showInfo");
+        str[0] = str1.toString();
+        str[1] = str2.toString();
+        return str;
     }
 
-    public void surrender() {
+    static public void surrender() {
+        Logger.log("Battle:surrender");
         System.out.println("You were captured by the goblins :(");
         win = false;
-        Logger.log("Battle:surrender");
+        System.exit(0);
     }
 
-    public void fight(){
-        win = true;
+    static public void fight() {
         Logger.log("Battle:fight");
+        win = true;
+        DataExtractor csvScanner = DataExtractor.getInstance();
+        csvScanner.deleteCompanion(0);
+        Allies.members.remove(Allies.members.get(0));
+        Allies.nr_member--;
+        if (csvScanner.getCompanionCount()==0){
+            System.out.println("You were defeated by the goblins :(");
+            win = false;
+            System.exit(0);
+        }
+
     }
 
     public boolean isWin() {

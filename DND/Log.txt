@@ -1,1 +1,21 @@
-Game, 2020/04/30 21:14:04
+Game, 2020/06/07 16:40:02 Thread: main
+Game::newGame, 2020/06/07 16:40:04 Thread: AWT-EventQueue-0
+Group::showInfo, 2020/06/07 16:40:04 Thread: AWT-EventQueue-0
+Group::showInfo, 2020/06/07 16:40:04 Thread: AWT-EventQueue-0
+Group::goSouth, 2020/06/07 16:40:06 Thread: AWT-EventQueue-0
+Group::showInfo, 2020/06/07 16:40:06 Thread: AWT-EventQueue-0
+Group::goEast, 2020/06/07 16:40:07 Thread: AWT-EventQueue-0
+Group::showInfo, 2020/06/07 16:40:07 Thread: AWT-EventQueue-0
+Group::goEast, 2020/06/07 16:40:07 Thread: AWT-EventQueue-0
+Group::showInfo, 2020/06/07 16:40:07 Thread: AWT-EventQueue-0
+Group::goEast, 2020/06/07 16:40:07 Thread: AWT-EventQueue-0
+Group::showInfo, 2020/06/07 16:40:07 Thread: AWT-EventQueue-0
+Group::goEast, 2020/06/07 16:40:07 Thread: AWT-EventQueue-0
+Group::showInfo, 2020/06/07 16:40:07 Thread: AWT-EventQueue-0
+Group::goEast, 2020/06/07 16:40:08 Thread: AWT-EventQueue-0
+Group::showInfo, 2020/06/07 16:40:08 Thread: AWT-EventQueue-0
+Group::showInfo, 2020/06/07 16:40:08 Thread: AWT-EventQueue-0
+Group::showInfo, 2020/06/07 16:40:08 Thread: AWT-EventQueue-0
+Battle::showInfo, 2020/06/07 16:40:08 Thread: AWT-EventQueue-0
+Battle:fight, 2020/06/07 16:40:09 Thread: AWT-EventQueue-0
+MapGUI::Save, 2020/06/07 16:40:10 Thread: AWT-EventQueue-0
