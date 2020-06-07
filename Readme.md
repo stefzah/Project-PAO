@@ -48,7 +48,7 @@ Sunt implementate:
 - operatii de DELETE pentru tabelul **campaign**
 - operatii de UPDATE pentru tabelul **map**
 
-Interfata, implementata cu **SWING**, are 3 ecrane:
+Interfata, implementata cu **SWING**, are 3 ecrane (Ecranele se pot utiliza independent unul fata de altul, insa pentru a pastra logica jocului am setat ca doar un ecran sa poata fi utilizat la un moment dat, insa aceasta setare poate fi anulata):
 
 Ecranul de selectare al jocului:
 
