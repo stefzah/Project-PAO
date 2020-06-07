@@ -53,11 +53,14 @@ Interfata, implementata cu **SWING**, are 3 ecrane:
 Ecranul de selectare a jocului:
 ![img](https://github.com/stefzah/Project-PAO/blob/master/2a6119b9d08e323c1e8c05e3a8f8e04f.png)
 
+
 Ecranul de miscare pe harta:
 ![img](https://github.com/stefzah/Project-PAO/blob/master/2592b31254a749fb327b31233552cd7e.png)
 
+
 Ecranul de batalie:
 ![img](https://github.com/stefzah/Project-PAO/blob/master/0ac16720c235623e7921e59edd00d065.png)
+
 
 De asemenea am adaugat si numele thread-ului care apeleaza functiile din Log.
 ![img](https://github.com/stefzah/Project-PAO/blob/master/a183dfbdbc17595779f72fd1328029aa.png)
